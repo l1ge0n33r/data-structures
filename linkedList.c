@@ -1,26 +1,31 @@
+#include<stdio.h>
 #include<stdlib.h>
 
 typedef int DataType;
 
-typedef struct node
+struct node
 {
 	DataType data;
-	node* next;
-} node;
+	struct node* next;
+};
 
 
-void constructor(node* head)
+void constructor(struct node* head)
 {
-	head = (node*)malloc(sizeof(node));
+	
 	head->data = 0;
 	head->next = NULL;
 }
 
-void destructor (node* head)
+void destructor (struct node* head)
 {
 	free(head);
 }
-void push_front(){}
+void push_front(struct node *head)
+{
+	struct node *tmp = (struct node*)malloc(sizeof(struct node));
+
+}
 void pop_front(){}
 void insert_after() {}
 void erase_after() {}
