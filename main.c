@@ -1,5 +1,5 @@
 #include<stdio.h>
-#define CAPACITY 40
+#define CAPACITY 40    //maximum capacity of array
 
 typedef int DataType;
 
@@ -109,44 +109,4 @@ void print(struct DynamicArray *the_array)
 		{
 			printf("%d: %d\n",i, the_array->buffer[i]);
 		}
-}
-
-int main()
-{
-	struct DynamicArray a;
-
-
-	constructor(&a);
-
-	for (size_t i = 10; i > 0; i--)
-	{
-		push_back(&a, i);
-	}
-	
-	print(&a);
-	
-	pop_back(&a);
-	printf("%d\n", get_element(&a, 3));
-
-	print(&a);
-	delete(&a, 5);
-	print(&a);
-
-
-	struct DynamicArray a2;
-
-
-	constructor(&a2);
-
-	for (size_t i = 0; i < 4; i++)
-	{
-		push_back(&a2, i);
-	}
-
-	assign(&a,&a2);
-	print(&a);
-	clear(&a2);
-	insert(&a, 32, 2);
-	print(&a);
-	print(&a2);
 }
